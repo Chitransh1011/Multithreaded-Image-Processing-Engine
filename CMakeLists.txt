@@ -12,6 +12,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 add_executable(image_processor
     src/main.cpp
     src/ImageLoader.cpp
+    src/ImageTiler.cpp
 )
 
 target_include_directories(image_processor
