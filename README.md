@@ -10,6 +10,7 @@ High-performance C++17 image-processing engine for tiled image workloads. The pr
 - Validates empty, missing, malformed, and unsupported input paths.
 - Reports image dimensions and channel count through a focused command-line interface.
 - Divides images into non-overlapping 512 x 512 tiles, including smaller edge tiles.
+- Runs a configurable grayscale, Gaussian blur, threshold, and Canny edge-detection pipeline.
 - Builds with CMake and Visual Studio Build Tools on Windows.
 
 ## Build (Windows / Visual Studio Build Tools)
@@ -39,11 +40,10 @@ Input Image -> Image Loader -> Image Tiler -> Task Queue
 
 ## Roadmap
 
-1. Modular OpenCV processing pipeline
-2. Reusable C++ thread pool
-3. Sequential and parallel reconstruction
-4. Measured benchmarks
-5. Tests and project documentation
+1. Reusable C++ thread pool
+2. Sequential and parallel reconstruction
+3. Measured benchmarks
+4. Tests and project documentation
 
 ## Relevance to High-Performance Imaging Systems
 

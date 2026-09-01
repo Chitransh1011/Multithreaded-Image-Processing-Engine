@@ -13,6 +13,7 @@ add_executable(image_processor
     src/main.cpp
     src/ImageLoader.cpp
     src/ImageTiler.cpp
+    src/ImageProcessor.cpp
 )
 
 target_include_directories(image_processor
@@ -26,6 +27,6 @@ else()
     target_compile_options(image_processor PRIVATE -Wall -Wextra -Wpedantic)
 endif()
 
-find_package(OpenCV REQUIRED COMPONENTS core imgcodecs)
+find_package(OpenCV REQUIRED COMPONENTS core imgcodecs imgproc)
 
 target_link_libraries(image_processor PRIVATE ${OpenCV_LIBS})
