@@ -14,6 +14,7 @@ add_executable(image_processor
     src/ImageLoader.cpp
     src/ImageTiler.cpp
     src/ImageProcessor.cpp
+    src/ThreadPool.cpp
 )
 
 target_include_directories(image_processor
