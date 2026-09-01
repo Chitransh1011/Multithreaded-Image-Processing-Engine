@@ -1,28 +1,31 @@
 # Multithreaded Image Processing Engine
 
-High-performance C++ image-processing engine built around tiled workloads and a reusable thread pool. The project is being developed incrementally for correctness, measurable performance, and interview-ready code quality.
+High-performance C++17 image-processing engine for tiled image workloads. The project uses OpenCV for image I/O, with a modular architecture designed to support concurrent execution and measurable performance analysis.
 
 > Scope: this is an engineering and image-processing project. It does not diagnose disease, make clinical decisions, or represent medical-device software.
 
-## Current status
+## Current capabilities
 
-Phase 1 is complete: a portable C++17/CMake project skeleton builds a minimal executable. Image loading, OpenCV integration, tiling, the processing pipeline, and concurrency are intentionally introduced in later verified phases.
+- Loads colour images with OpenCV.
+- Validates empty, missing, malformed, and unsupported input paths.
+- Reports image dimensions and channel count through a focused command-line interface.
+- Builds with CMake and Visual Studio Build Tools on Windows.
 
-## Build (Windows / MinGW)
+## Build (Windows / Visual Studio Build Tools)
 
 ```powershell
 $cmake = 'C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe'
-& $cmake -S . -B build -G "MinGW Makefiles"
-& $cmake --build build
+& $cmake -S . -B build -G "Visual Studio 16 2019" -A x64 -DOpenCV_DIR="tools/opencv/opencv/build/x64/vc16/lib"
+& $cmake --build build --config Debug
 ```
 
 ## Run
 
 ```powershell
-.\build\image_processor.exe
+.\build\Debug\image_processor.exe <image-path>
 ```
 
-## Planned architecture
+## Architecture
 
 ```text
 Input Image -> Image Loader -> Image Tiler -> Task Queue
@@ -33,19 +36,15 @@ Input Image -> Image Loader -> Image Tiler -> Task Queue
                                       Result Reconstruction -> Output Image
 ```
 
-## Development phases
+## Roadmap
 
-1. Build system - complete
-2. OpenCV image loading and validation
-3. Edge-safe image tiling
-4. Modular OpenCV processing pipeline
-5. Reusable C++ thread pool
-6. Sequential and parallel reconstruction
-7. Measured benchmarks
-8. Tests and cleanup
-9. Complete project documentation
+1. Edge-safe image tiling
+2. Modular OpenCV processing pipeline
+3. Reusable C++ thread pool
+4. Sequential and parallel reconstruction
+5. Measured benchmarks
+6. Tests and project documentation
 
 ## Relevance to High-Performance Imaging Systems
 
 The finished engine will demonstrate transferable C++ systems programming, tiled high-resolution image workloads, modular image-processing stages, concurrent task execution, and measured performance trade-offs. It makes no claims of clinical use, diagnostic capability, scanner firmware, or production medical-device deployment.
-

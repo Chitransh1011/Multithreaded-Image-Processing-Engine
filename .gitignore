@@ -1,7 +1,10 @@
 # Build products
 /build/
+/build-*/
 /out/
 /bin/
+/tools/
+/docs/
 *.exe
 *.dll
 *.so
@@ -31,4 +34,3 @@ Testing/
 !/input/.gitkeep
 /output/*
 !/output/.gitkeep
-
