@@ -47,7 +47,7 @@ Input Image -> Image Loader -> Image Tiler -> Task Queue
 
 ## Roadmap
 
-1. Tests and project documentation
+1. Final project documentation
 
 ## Relevance to High-Performance Imaging Systems
 
