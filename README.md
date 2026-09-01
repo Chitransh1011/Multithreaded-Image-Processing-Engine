@@ -12,6 +12,7 @@ High-performance C++17 image-processing engine for tiled image workloads. The pr
 - Divides images into non-overlapping 512 x 512 tiles, including smaller edge tiles.
 - Runs a configurable grayscale, Gaussian blur, threshold, and Canny edge-detection pipeline.
 - Provides a reusable thread pool built with `std::thread`, mutexes, condition variables, and futures.
+- Reconstructs sequential or parallel tile results into a full-size output image.
 - Builds with CMake and Visual Studio Build Tools on Windows.
 
 ## Build (Windows / Visual Studio Build Tools)
@@ -26,6 +27,7 @@ $cmake = 'C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7
 
 ```powershell
 .\build\Debug\image_processor.exe <image-path>
+.\build\Debug\image_processor.exe --threads 4 <image-path>
 ```
 
 ## Architecture
@@ -41,9 +43,8 @@ Input Image -> Image Loader -> Image Tiler -> Task Queue
 
 ## Roadmap
 
-1. Sequential and parallel reconstruction
-2. Measured benchmarks
-3. Tests and project documentation
+1. Measured benchmarks
+2. Tests and project documentation
 
 ## Relevance to High-Performance Imaging Systems
 
